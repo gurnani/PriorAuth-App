@@ -1,0 +1,13 @@
+diagram {
+  User --> "IIS Web Server": "HTTP Request"
+  "IIS Web Server" --> "ASP Pages": "Serve Pages"
+  "ASP Pages" --> "JS/TS Frontend": "Script Includes"
+  "ASP Pages" --> "Static Assets": "CSS/Images"
+  "JS/TS Frontend" --> "Lookup Modals": "Open Modal/Iframe"
+  "Lookup Modals" --> "ASP Pages": "Serve Lookup ASP"
+  "ASP Pages" --> "SQL Server DB": "OLEDB Connection"
+  "ASP Pages" --> "Stored Procedure": "sp_UpsertPriorAuthorizationData"
+  "JS/TS Frontend" --> "ASP Pages": "Form POST/AJAX"
+  "JS/TS Frontend" --> "TypeScript Interfaces": "Shared Types"
+  "ASP Pages" --> "TypeScript Interfaces": "Shared Types (via JS)"
+}
